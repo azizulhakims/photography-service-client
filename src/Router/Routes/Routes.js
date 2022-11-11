@@ -3,9 +3,13 @@ import AddService from "../../Dashboard/AddService";
 import DashboardMain from "../../Dashboard/DashboardMain";
 import Main from "../../Layout/Main";
 import Home from "../../sPages/Home/Home/Home";
+import Servicedtails from "../../sPages/Home/Home/Services/Servicedtails";
+
+
 import Services from "../../sPages/Home/Home/Services/Services";
 import Login from "../../sPages/Login/Login";
 import Register from "../../sPages/Login/Register";
+import ServiceReview from "../../sPages/Review/ServiceReview";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +31,15 @@ const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>
-            }
+            },
+            {
+                path: '/servicerdetails/:id',
+                element: <Servicedtails></Servicedtails>
+            },
+            {
+                path: '/servicereview/:id',
+                element: <ServiceReview></ServiceReview>,
+            },
         ],
 
 
