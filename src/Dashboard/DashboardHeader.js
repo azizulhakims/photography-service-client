@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 const DashboardHeader = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
 
     return (
         <div className="navbar bg-orange-400">
@@ -19,24 +26,22 @@ const DashboardHeader = () => {
 
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">CameraPro Dashboard</a>
+                {/* <a className="btn btn-ghost normal-case text-xl">CameraPro Dashboard</a>
                 {user?.email && <span>{user.email} <button>Logout</button></span>}
-                <a>Hello</a>
+                <a>Hello</a> */}
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to={'/dashboard/addservice'}>Add Service</Link></li>
-                    <li><Link to={'/dashboard/addservice'}>Add Service</Link></li>
                     <li><Link to={'/'}>Home</Link></li>
-                    {user?.email && <span>{user.email} <button>Logout</button></span>}
-                    {user?.email && <span>{user.email} <button>Logout</button></span>}
+
+
 
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
-                {user?.email && <span>{user.email} <button>Logout</button></span>}
-                <a> hello {user?.email && <span>{user.email} <button>Logout</button></span>}</a>
+
+                {user?.email && <span>{user.email} <button onClick={handleLogOut}>Logout</button></span>}
             </div>
         </div>
     );

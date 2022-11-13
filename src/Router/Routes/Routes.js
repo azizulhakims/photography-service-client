@@ -10,6 +10,7 @@ import Services from "../../sPages/Home/Home/Services/Services";
 import Login from "../../sPages/Login/Login";
 import Register from "../../sPages/Login/Register";
 import ServiceReview from "../../sPages/Review/ServiceReview";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -49,15 +50,15 @@ const router = createBrowserRouter([
 
     {
         path: '/dashboard',
-        element: <DashboardMain></DashboardMain>,
+        element: <PrivateRoute><DashboardMain></DashboardMain></PrivateRoute>,
         children: [
             {
                 path: '/dashboard',
-                element: <DashboardMain></DashboardMain>
+                element: <PrivateRoute><DashboardMain></DashboardMain></PrivateRoute>
             },
             {
                 path: '/dashboard/addservice',
-                element: <AddService></AddService>
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>
             },
         ]
     }
