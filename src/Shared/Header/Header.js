@@ -46,6 +46,9 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 <button className="btn btn-primary">Book Now</button>
+                <Link to={'/dashboard/addservice'}>
+                    <button className='btn btn-orange'>Admin Login</button>
+                </Link>
             </div>
         </div>
     );
