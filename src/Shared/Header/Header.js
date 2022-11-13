@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext)
+    // console.log('cintext', user.email);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
+
     const menuItems = <>
         <li><Link to={'/'}>Home</Link></li>
         <li><Link to={'/services'}>Services</Link></li>
+        <li> {user?.email && <span>{user?.email} <button onClick={handleLogOut}>Logout</button></span>}</li>
+
+
 
     </>
     return (

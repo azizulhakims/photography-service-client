@@ -4,7 +4,7 @@ import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 const DashboardHeader = () => {
     const { user } = useContext(AuthContext)
-    console.log('cintext', user.email);
+
     return (
         <div className="navbar bg-orange-400">
             <div className="navbar-start">
@@ -14,11 +14,8 @@ const DashboardHeader = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to={'/dashboard/addservice'}>Add Service</Link></li>
-                        <li><Link to={'/dashboard/addservice'}>Add Service</Link></li>
                         <li><Link to={'/'}>Home</Link></li>
-                        <li> {user?.email && <span>{user.email} <button>Logout</button></span>}</li>
-                        {user?.email && <span>{user.email} <button>Logout</button></span>}
-                        <li>hello</li>
+
 
                     </ul>
                 </div>
