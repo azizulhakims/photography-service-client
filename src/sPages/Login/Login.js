@@ -1,9 +1,13 @@
-import React, { useContext } from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { login } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const { login, ProviderLogin, setLoading } = useContext(AuthContext);
+
     const handelSubmitLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -14,11 +18,32 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-
+                form.reset();
+                setError('');
             })
-            .then(error => console.log(error));
+            .then(error => console.log(error), setError(error.message));
+
+
+
+
+
+
 
     }
+    const googleProvider = new GoogleAuthProvider();
+    const handleGoogleLogin = () => {
+        ProviderLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                console.log(handleGoogleLogin)
+            })
+            .catch(error => console.error(error))
+
+
+
+    }
+
 
 
     return (
@@ -47,8 +72,10 @@ const Login = () => {
                     </div>
                 </form>
                 <p>Are you New Here Please <Link className='btn' to={'/register'} > SignUp</Link> </p>
+                <br></br>
+                <p className=''>You can also Login By Google <button onClick={handleGoogleLogin}><FaGoogle></FaGoogle></button> </p>
             </div>
-        </div>
+        </div >
 
     );
 };

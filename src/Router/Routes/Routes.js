@@ -34,7 +34,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/servicerdetails/:id',
-                element: <Servicedtails></Servicedtails>
+                element: <Servicedtails></Servicedtails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: '/servicereview/:id',

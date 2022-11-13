@@ -1,30 +1,62 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 
 const Servicedtails = () => {
 
+    const { _id, title, img, description } = useLoaderData();
+    const { user } = useContext(AuthContext);
+
+
+    console.log(_id)
     return (
         <div>
             <div className="hero bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src="https://placeimg.com/260/400/arch" className="max-w-sm rounded-lg shadow-2xl" />
+                    <img src={img} />
                     <div>
-                        <h1 className="text-5xl font-bold">Box Office News!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <h1 className="text-5xl font-bold">{title}</h1>
+                        <p className="py-6">{description}</p>
+                        <div>
+                            <button className="btn btn-primary">Back</button>
+                            <button className="btn btn-primary">Click</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div>
                 <h2 className='p-4'>Review Section</h2>
-                <div className="card w-96 bg-base-100 shadow-xl">
-                    <div className="card-body">
-                        <h2 className="card-title">Card title!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                <div>
+                    <div>
+
+                        <div className="card w-96 bg-base-100 shadow-xl">
+                            <div className="card-body">
+                                <h2 className="card-title">{ }</h2>
+                                <p>{ }</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-primary">Buy Now</button>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
+                <div>
+
+                    <div className="card w-96 bg-base-100 shadow-xl">
+                        <div className="card-body">
+                            <h2 className="card-title">{ }</h2>
+                            <p>{ }</p>
+                            <div className="card-actions justify-end">
+                                <button className="btn btn-primary">Write a Review</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
             </div>
         </div>
     );
