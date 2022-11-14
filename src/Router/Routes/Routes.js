@@ -1,3 +1,4 @@
+import { FaThemeco } from "react-icons/fa";
 import { createBrowserRouter } from "react-router-dom";
 import AddService from "../../Dashboard/AddService";
 import DashboardMain from "../../Dashboard/DashboardMain";
@@ -9,6 +10,7 @@ import Servicedtails from "../../sPages/Home/Home/Services/Servicedtails";
 import Services from "../../sPages/Home/Home/Services/Services";
 import Login from "../../sPages/Login/Login";
 import Register from "../../sPages/Login/Register";
+import MyReview from "../../sPages/Review/MyReview";
 import ServiceReview from "../../sPages/Review/ServiceReview";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
@@ -39,8 +41,8 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
-                path: '/servicereview/:id',
-                element: <ServiceReview></ServiceReview>,
+                path: '/myReview',
+                element: <MyReview></MyReview>,
             },
         ],
 

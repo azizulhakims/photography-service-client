@@ -17,7 +17,13 @@ const Header = () => {
     const menuItems = <>
         <li><Link to={'/'}>Home</Link></li>
         <li><Link to={'/services'}>Services</Link></li>
-        <li> {user?.email && <span>{user?.email} <button onClick={handleLogOut}>Logout</button></span>}</li>
+        {
+            user?.email ? <>
+                <li><Link to='/myReview'>My Reviews</Link></li>
+                <li><span>{user?.email} <button onClick={handleLogOut}>Logout</button></span></li>
+            </> : null
+        }
+
 
 
 

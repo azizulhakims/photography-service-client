@@ -7,7 +7,7 @@ const ReviewData = ({ reviewdata }) => {
     return (
         <div>
             <div>
-                <h2 className='p-4'>Review Section</h2>
+                <h2 className='p-4'></h2>
                 <div>
                     <div>
                         <div className="card w-96 bg-base-100 shadow-xl">

@@ -49,7 +49,7 @@ const Servicedtails = () => {
                         <h1 className="text-5xl font-bold">{name}</h1>
                         <p className="py-6">{descriptions}</p>
                         <div>
-                            <button className="btn btn-primary">Back</button>
+                            <Link to={'/services'}><button className="btn btn-primary">Back</button></Link>
                             {/* The button to open modal */}
                             <a href="#my-modal-2" className="btn" onClick={() => setOpen(true)}>Review</a>
 
