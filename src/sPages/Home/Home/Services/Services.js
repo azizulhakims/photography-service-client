@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import ServicesItems from './ServicesItems';
 
-const Services = () => {
+const Services = ({ all = true }) => {
     const [service, setServices] = useState([]);
     useEffect(() => {
         fetch("http://localhost:5000/services")
@@ -28,10 +28,13 @@ const Services = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 
 
-                {
+                {all ?
                     service.map(perservice => <ServicesItems
                         key={perservice._id}
                         service={perservice}
+                    ></ServicesItems>) : service.slice(0, 1).map(item => <ServicesItems
+                        key={item._id}
+                        service={item}
                     ></ServicesItems>)
                 }
 
