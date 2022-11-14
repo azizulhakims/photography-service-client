@@ -32,7 +32,7 @@ const Services = ({ all = true }) => {
                     service.map(perservice => <ServicesItems
                         key={perservice._id}
                         service={perservice}
-                    ></ServicesItems>) : service.slice(0, 1).map(item => <ServicesItems
+                    ></ServicesItems>) : service.slice(0, 3).map(item => <ServicesItems
                         key={item._id}
                         service={item}
                     ></ServicesItems>)
