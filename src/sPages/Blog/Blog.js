@@ -47,6 +47,19 @@ const Blog = () => {
                     </p>
                 </div>
             </div>
+            <div tabIndex={0} className="collapse collapse-open border border-base-300 bg-base-100 rounded-box">
+                <div className="collapse-title text-xl font-medium">
+                    how does Node JS handle multiple request at the same time?
+                </div>
+                <div className="collapse-content">
+                    <p>
+                        Given a NodeJS application, since Node is single threaded, say if processing involves a Promise.all that takes 8 seconds, does this mean that the client request that comes after this request would need to wait for eight seconds?
+                        No. NodeJS event loop is single threaded. The entire server architecture for NodeJS is not single threaded.
+
+                        Before getting into the Node server architecture, to take a look at typical multithreaded request response model, the web server would have multiple threads and when concurrent requests get to the webserver, the webserver picks threadOne from the threadPool and threadOne processes requestOne and responds to clientOne and when the second request comes in, the web server picks up the second thread from the threadPool and picks up requestTwo and processes it and responds to clientTwo. threadOne is responsible for all kinds of operations that requestOne demanded including doing any blocking IO operations.
+                    </p>
+                </div>
+            </div>
         </div>
     );
 };
