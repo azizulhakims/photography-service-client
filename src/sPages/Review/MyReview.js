@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const MyReview = () => {
     const { user, loading } = useContext(AuthContext)
+    useTitle('My Review')
 
 
     const [review, setReview] = useState([]);
