@@ -12,7 +12,7 @@ const EditReview = () => {
     // useTitle('My Review')
     const [reviews, setReviews] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewsubmit/${id}`)
+        fetch(`https://photography-service-server-seven.vercel.app/reviewsubmit/${id}`)
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -33,7 +33,7 @@ const EditReview = () => {
             comment: e.target.comment.value
         }
 
-        fetch(`http://localhost:5000/reviewsubmit/${id}`, {
+        fetch(`https://photography-service-server-seven.vercel.app/reviewsubmit/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

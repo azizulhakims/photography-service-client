@@ -18,7 +18,7 @@ const Servicedtails = () => {
         };
         console.log(reviewsubmit);
 
-        fetch("http://localhost:5000/reviewsubmit", {
+        fetch("https://photography-service-server-seven.vercel.app/reviewsubmit", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

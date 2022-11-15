@@ -6,14 +6,11 @@ import Main from "../../Layout/Main";
 import Blog from "../../sPages/Blog/Blog";
 import Home from "../../sPages/Home/Home/Home";
 import Servicedtails from "../../sPages/Home/Home/Services/Servicedtails";
-
-
 import Services from "../../sPages/Home/Home/Services/Services";
 import Login from "../../sPages/Login/Login";
 import Register from "../../sPages/Login/Register";
 import EditReview from "../../sPages/Review/EditReview";
 import MyReview from "../../sPages/Review/MyReview";
-import ServiceReview from "../../sPages/Review/ServiceReview";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
@@ -40,11 +37,11 @@ const router = createBrowserRouter([
             {
                 path: '/servicerdetails/:id',
                 element: <Servicedtails></Servicedtails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://photography-service-server-seven.vercel.app/services/${params.id}`)
             },
             {
                 path: '/myReview',
-                element: <MyReview></MyReview>,
+                element: <PrivateRoute><MyReview></MyReview></PrivateRoute>,
             },
             {
                 path: '/blog',
@@ -52,7 +49,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myReview/edit/:id',
-                element: <EditReview></EditReview>
+                element: <PrivateRoute><EditReview></EditReview></PrivateRoute>,
             }
         ],
 

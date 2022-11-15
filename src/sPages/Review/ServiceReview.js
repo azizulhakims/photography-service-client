@@ -8,7 +8,7 @@ const ServiceReview = ({ id }) => {
     const { user, loading } = useContext(AuthContext)
     const [review, setReview] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/reviewsubmit")
+        fetch("https://photography-service-server-seven.vercel.app/reviewsubmit")
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
