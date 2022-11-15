@@ -43,7 +43,7 @@ const Footer = () => {
                 <div className="items-center grid-flow-col">
                     <div className='flex gap-4 justify-center'>
                         <img src={logo} alt="" className="w-20 h-20 rounded-full" />
-                        <p className='p-3'>ACME Industries Ltd. <br />Providing reliable tech since 1992</p>
+                        <p className='p-3'> <br /></p>
                     </div>
                 </div>
                 <div className="md:place-self-center md:justify-self-end">

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ReviewData = ({ reviewdata }) => {
 
-    const { comment, _id } = reviewdata;
+    const { comment, _id, email, userEmail } = reviewdata;
 
     return (
         <div>
@@ -13,9 +13,10 @@ const ReviewData = ({ reviewdata }) => {
                         <div className="card w-96 bg-base-100 shadow-xl">
                             <div className="card-body">
                                 <h2 className="card-title">{comment}</h2>
-                                <p>{_id}</p>
+                                <h2 className=""><small>user email : {userEmail}</small></h2>
+
                                 <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Buy Now</button>
+
                                 </div>
                             </div>
                         </div>

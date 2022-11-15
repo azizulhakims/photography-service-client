@@ -12,6 +12,7 @@ const Servicedtails = () => {
         e.preventDefault();
         const reviewsubmit = {
             userEmail: user.email,
+            services: name,
             serviceId: _id,
             comment: e.target.comment.value,
         };
@@ -86,6 +87,7 @@ const Servicedtails = () => {
                 </div> : null
             }
             <ServiceReview id={_id}></ServiceReview>
+
         </div>
     );
 };

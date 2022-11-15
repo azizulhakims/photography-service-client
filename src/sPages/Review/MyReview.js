@@ -22,14 +22,16 @@ const MyReview = () => {
             .catch(err => toast.error(err.message))
     }, [loading])
 
-    const filterData = review.filter(item => item.userEmail === user?.email)
+    const filterData = review.filter(item => item.userEmail === user?.email);
 
     return (
-        <div className='card w-96 bg-primary text-primary-content'>
+        <div className='card w-96 bg-primary text-primary-content pl-5'>
             <div className="card-body">
                 {
-                    filterData.length ? filterData.map(item => <div key={item._id}><h1>My Email: {user?.email}</h1>
-                        <h2>My Comment- {item.comment}</h2></div>) : <div>No reviews Foubd</div>
+                    filterData.length ? filterData.map(item => <div key={item._id}>
+                        <h2>Service Name- {item.services}</h2>
+                        <h2>My Comment- {item.comment}</h2>
+                        <button className='btn'>Edit Review</button> <button className='btn'>Delete Review</button></div>) : <div>No reviews Foubd</div>
                 }
             </div>
         </div>
