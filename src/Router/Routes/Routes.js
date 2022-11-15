@@ -11,6 +11,7 @@ import Servicedtails from "../../sPages/Home/Home/Services/Servicedtails";
 import Services from "../../sPages/Home/Home/Services/Services";
 import Login from "../../sPages/Login/Login";
 import Register from "../../sPages/Login/Register";
+import EditReview from "../../sPages/Review/EditReview";
 import MyReview from "../../sPages/Review/MyReview";
 import ServiceReview from "../../sPages/Review/ServiceReview";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>,
+            },
+            {
+                path: '/myReview/edit/:id',
+                element: <EditReview></EditReview>
             }
         ],
 

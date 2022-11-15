@@ -14,7 +14,7 @@ const Banner = () => {
                         <h1 className='text-5xl'>Capture Love, Joy & Everything With Us</h1>
                         <br />
                         <br />
-                        <p>It is a long established fact that a reader will be distracted by the reale he point of using Lorem Ipsum is that it has a more-or-less normal valid.</p>
+                        <p>I the best photo clicker in the world so can trust me also invite me all event for photo click..</p>
                         <br />
                         <button className="btn btn-success">Get Start</button>
                     </div>
